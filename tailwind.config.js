@@ -7,3 +7,11 @@ module.exports = {
   plugins: [],
 }
 
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    container: {
+      width: '1050px',
+    },
+  },
+}

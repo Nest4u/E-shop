@@ -5,23 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            bandage: '#23856D',
-            link: '#737373',
-            blueLink: '#23A6F0',
-            bgbuton: '#F9F9F9',
-            cardscolor:'#E77C40',
-            tx:'#252B42'
-            
-          }
-        }
-      }
-    }
-  </script>
   <style type="text/tailwindcss">
     @layer utilities {
       .content-auto {
@@ -29,13 +12,14 @@
       }
     }
   </style>
+  <script src="./index.js"></script>
   <title>Document</title>
 </head>
 <body class="font-sans">
 
   <header>
-    <div class="bg-bandage">
-      <div class="container mx-auto pt-6 pb-[18px] text-white flex justify-around">
+    <div class="bg-bandage hidden md:block">
+      <div class="md:container mx-auto pt-6 pb-[18px] text-white flex justify-around">
         <div>
           <span class="text-xs mr-[10px]">(225) 555 - 0118</span>
           <span class="text-xs">michelle.rivera@example.com</span>
@@ -62,54 +46,116 @@
         </div>
       </div>
     </div>
-    <div class="container mx-auto py-6">
-      <nav class="flex items-center justify-around">
-
+    
+    <div class="md:container mx-auto py-6">
+      <nav class="flex items-center justify-between mx-auto ">
         <div class="text-2xl font-bold">Bandage</div>
-
-        <menu class="flex items-center justify-around gap-[15px]">
-          <li class="text-sm text-link font-bold leading-6">Home</li>
-          <li class="text-sm text-link font-bold leading-6">Shop</li>
-          <li class="text-sm text-link font-bold leading-6">About</li>
-          <li class="text-sm text-link font-bold leading-6">Blog</li>
-          <li class="text-sm text-link font-bold leading-6">Contact</li>
-          <li class="text-sm text-link font-bold leading-6">Pages</li>
-        </menu>
-
-        <div class="flex items-center justify-around">
-          <div class="text-blueLink text-sm font-bold leading-6 px-[15px]">
+        <button type="button" class="md:hidden block text-gray-400 hover:text-white focus:outline-none" id="mobile-menu-button" onclick="toggleMenu()">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+      </button>
+      
+      <button type="button" onclick="toggleMenu()" class="-m-2.5 rounded-md p-2.5 text-gray-700 hidden" id="mobile-close-btn">
+          <span class="sr-only">Close menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+      </button>
+      <!-- Меню -->
+      <menu class="hidden md:flex items-center justify-between gap-[15px]">
+          <li class="text-md font-bold text-link leading-6">Home</li>
+          <li class="text-md font-bold text-link leading-6">
+              <div>
+                  <button type="button" class="inline-flex w-full justify-center gap-x-1.5 bg-white py-2 text-sm font-semibold text-gray-900 ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                      Shop
+                      <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+              </div>
+          </li>
+          <li class="text-sm font-bold text-link leading-6">About</li>
+          <li class="text-sm font-bold text-link leading-6">Blog</li>
+          <li class="text-sm font-bold text-link leading-6">Contacts</li>
+          <li class="text-sm font-bold text-link leading-6">Pages</li>
+      </menu>
+<div class="hidden md:block">
+        <div class="flex items-center justify-around ">
+          <div class="text-blueLink text-sm font-bold leading-6 px-[15px] ">
             Login / Register
           </div>
           <div class="flex text-blueLink">
-            <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs">
+            <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs ">
               <span class="w-4 h-4 flex items-center justify-center text-xs">
-                <img src="./img/magn.png" alt="">
+                <img  src="./img/magn.png" alt="">
               </span>
             </button>
             <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs">
               <span class="w-4 h-4 flex items-center justify-center">
                 <img src="./img/cart.png" alt="">
-              </span>
-              1
-
+              </span>              
             </button>
             <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs">
               <span class="w-4 h-4 flex items-center justify-center">
                 <img src="./img/heart.png" alt="">
-              </span>
-              1
+              </span>            
             </button>
           </div>
         </div>
-
+        </div>
       </nav>
     </div>
+    <div class="lg:hidden md:hidden  hidden" role="dialog" aria-modal="true" id="mobile-menu">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+     
+              <div class="flex items-center justify-between">
+              
+                </div>
+                  
+                    <menu class=" flex items-center flex-col justify-center gap-[15px]">
+                      <li class="text-md font-bold text-gray-700 leading-6 ">Home</li>
+                      <li class="text-md font-bold text-link leading-6"> Shop</li>
+                      <li class="text-sm font-bold text-link leading-6">About</li>
+                      <li class="text-sm font-bold text-link leading-6">Blog</li>
+                      <li class="text-sm font-bold text-link leading-6">Contacts</li>
+                      <li class="text-sm font-bold text-link leading-6">Pages</li>
+                  </menu>
+                  <div class="flex items-center justify-center flex-col py-6">
+                    <div class="text-blueLink text-sm font-bold leading-6 px-[15px] ">
+                      Login / Register
+                    </div>
+                    <div class="flex text-blueLink flex-col">
+                      <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs ">
+                        <span class="w-4 h-4 flex items-center justify-center text-xs">
+                          <img  src="./img/magn.png" alt="">
+                        </span>
+                      </button>
+                      <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs">
+                        <span class="w-4 h-4 flex items-center justify-center">
+                          <img src="./img/cart.png" alt="">
+                        </span>              
+                      </button>
+                      <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs">
+                        <span class="w-4 h-4 flex items-center justify-center">
+                          <img src="./img/heart.png" alt="">
+                        </span>            
+                      </button>
+                    </div>
+                  
+              
+          
+      </div>
+  </div>
+  
+  <div class="container mx-auto py-6  md:flex md:flex-row md:items-center md:justify-between   flex flex-col justify-center items-center ">
 
-    <div class="container mx-auto py-6 flex items-center justify-between">
-      <div class="flex">
+      
+      <div class="flex 2xl:ml-[44px] xl:ml-[24px]">
         <h2 class="text-2xl font-bold">Shop</h2>
       </div>
-      <div class="flex">
+      
+      <div class="flex 2xl:mr-[44px] xl:mr-[24px] py-6">
         <div class="text-sm font-bold leading-6">
           Home 
           <span class="text-gray-300 mx-[15px]">></span>
@@ -120,8 +166,8 @@
   </header>
 
   <main>
-    <section class="container mx-auto grid grid-cols-5 gap-[4px]" style="display: none;">
-      <div class="flex justify-center">
+    <section class="container mx-auto grid grid-cols-5 " style="display: none;">
+      <div class="flex ">
         <div class="animate-pulse h-[223px] max-w-[205px] w-full bg-slate-200 rounded shadow-md flex flex-col items-center justify-center gap-3">
           <div class="rounded p-1 bg-slate-300 w-[55%]"></div>
           <div class="rounded p-1 bg-slate-300 w-[35%]"></div>
@@ -153,7 +199,7 @@
       </div>
     </section>
 
-    <section class="container mx-auto grid grid-cols-5  gap-[14px]">
+    <section class="container mx-auto  md:grid md:grid-cols-5   md:gap-[14px] grid grid-cols-1">
       <div class="flex relative">
         <div class="flex flex-col items-center justify-center gap-[10px] text-white text-sm absolute inset-0">
           <h4 class="uppercase font-bold leading-6">Cloths</h4>
@@ -195,11 +241,11 @@
       </div>
     </section>
     
-    <div class="container mx-auto pt-6 pb-[18px] flex justify-between items-center">
-      <div>
+    <div class="container mx-auto py-6  md:flex md:flex-row md:items-center md:justify-between   flex flex-col justify-center items-center pt-6 pb-[18px]" >
+      <div class="2xl:ml-[44px] xl:ml-[24px]">
         <span class="text-xs">Showing all 12 results</span>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center py-6">
         <span class="text-sm font-bold leading-6">Views:</span>
         <div class="flex mx-[15px]">
           <span>
@@ -216,7 +262,7 @@
           </span>
         </div>
       </div>
-      <div class="flex">
+      <div class="flex 2xl:mr-[34px] ">
         <div>
           <button type="button" class="inline-flex justify-center items-center gap-x-1.5 rounded-md bg-bgbuton px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" style="width: 141px; height: 46px;">
             Popularity
@@ -233,7 +279,7 @@
       </div>
     </div>
     
-    <section class="container mx-auto grid grid-cols-4 " >
+    <section class="container mx-auto md:grid md:grid-cols-4 grid grid-cols-1 " >
       
       <div class="flex flex-col items-center justify-center gap-[10px] my-3">
         <img src="./img/product-cover-5.png" alt="">
@@ -280,7 +326,7 @@
         <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
         </div>
       </div>
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
+      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden">
         <img src="./img/product-cover-5.png" alt="">
         <h5 class="text-tx font-bold" >Graphic Design</h5>
         <p class="text-gray-500">English Department</p>
@@ -295,7 +341,8 @@
         <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
         </div>
       </div>
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
+      
+      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden">
         <img src="./img/product-cover-5.png" alt="">
         <h5 class="text-tx font-bold" >Graphic Design</h5>
         <p class="text-gray-500">English Department</p>
@@ -310,7 +357,7 @@
         <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
         </div>
       </div> 
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
+      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden">
         <img src="./img/product-cover-5.png" alt="">
         <h5 class="text-tx font-bold" >Graphic Design</h5>
         <p class="text-gray-500">English Department</p>
@@ -325,7 +372,7 @@
         <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
         </div>
       </div>
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
+      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden ">
         <img src="./img/product-cover-5.png" alt="">
         <h5 class="text-tx font-bold" >Graphic Design</h5>
         <p class="text-gray-500">English Department</p>
@@ -340,7 +387,7 @@
         <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
         </div>
       </div>
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
         <img src="./img/product-cover-5.png" alt="">
         <h5 class="text-tx font-bold" >Graphic Design</h5>
         <p class="text-gray-500">English Department</p>
@@ -388,15 +435,16 @@
     </div>
 
     <div class="flex items-center justify-center w-msx">
-      <img src="./img/desktop-clients-1.png" alt="">
+      <img src="./img/desktop-clients-1.png" alt="" class="hidden md:block  ">
+      <img src="./img/mobile-clients-1.png" alt=""  class="md:hidden">
     </div>
     
-    <div class="container mx-auto py-6 flex items-center justify-between">
-      <div class="flex">
+    <div class="container mx-auto   md:flex md:flex-row md:items-center md:justify-between   flex flex-col justify-center items-center py-6">
+      <div class="flex 2xl:ml-[44px] xl:ml-[24px]">
         <div class="text-2xl font-bold">Bandage</div>
       </div>
       
-        <div class="text-sm font-bold leading-6 flex ">
+        <div class="text-sm font-bold leading-6 flex 2xl:mr-[44px] xl:mr-[24px] py-6">
            
           <span > <img src="./img/facebook1.png" alt=""></span>
           <span class="mx-3"> <img src="./img/ant-design_instagram-outlined.png" alt=""></span>
@@ -407,20 +455,22 @@
     
   </main>
   <div class="flex items-center justify-center">
-    <img src="./img/hr (1).png" alt="">
+    <img src="./img/hr (1).png" alt="" >
+    
   </div>
-  <footer class="flex items-center justify-center my-[40px] ">
-    <div class="grid grid-cols-6 gap-4">
-    <div>
+  
+  <footer class="container  mx-auto md:grid lg:grid-cols-6 md:grid-cols-4 grid grid-cols-1   ">
+    
+    <div class="2xl:ml-[44px] xl:ml-[24px]  text-center   my-3">
       <h5 class="font-bold my-3">Company Info</h5>
-      <ul>
+      <ul >
         <li class="text-tx">About Us</li>
         <li class="text-tx my-2">Carrier</li>
         <li class="text-tx">We are hiring</li>
         <li class="text-tx my-2">Blog</li>
       </ul>
     </div>
-    <div>
+    <div class="2xl:ml-[44px] xl:ml-[24px]  text-center  my-3">
       <h5 class="font-bold my-3">Legal</h5>
       <ul>
         <li class="text-tx">About Us</li>
@@ -429,7 +479,7 @@
         <li class="text-tx my-2">Blog</li>
       </ul>
     </div>
-    <div>
+    <div class="2xl:ml-[44px] xl:ml-[24px]  text-center   my-3">
       <h5 class="font-bold my-3">Features</h5>
       <ul>
         <li class="text-tx">Business Marketing</li>
@@ -438,7 +488,7 @@
         <li class="text-tx my-2">Unlimited Support</li>
       </ul>
     </div>
-    <div >
+    <div class="2xl:ml-[44px] xl:ml-[24px]  text-center  my-3 ">
       <h5 class="font-bold my-3">Resources</h5>
       <ul>
         <li class="text-tx">IOS & Android</li>
@@ -447,21 +497,21 @@
         <li class="text-tx my-2">API</li>
       </ul>
     </div>
-    <div class="col-span-2">
+    <div class="2xl:ml-[44px] xl:ml-[24px]  mx-auto  my-3 md:col-span-6 lg:col-span-2">
     <h5 class="font-bold my-3">Get In Touch</h5>
-    <div class="max-w-md mx-auto">
+    <div class=" mx-auto">
     <form class="flex items-center   py-2">
       <input type="email" class="w-[204px] h-[58px] px-3 py-2   focus:outline-none focus:border-blue-700" placeholder="Enter your email">
-      <button type="submit" class="bg-blue-500 w-[117px] h-[58px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+      <button type="submit" class="bg-blue-500 w-[117x] h-[58px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
     </form>
     </div>
     <p class="text-tx">Lore imp sum dolor Amit</p>
     </div>
-    </div>
+    
     
   </footer>
   <div class=" bg-gray-100">
-  <div class="container h-[74px] mx-auto flex items-center">
+  <div class="container h-[74px] mx-auto flex items-center justify-center md:justify-start ">
     <span class="text-tx">Made With Love By Finland All Right Reserved </span>
   </div>
 </div>
