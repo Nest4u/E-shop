@@ -49,8 +49,8 @@
     
     <div class="md:container mx-auto py-6">
       <nav class="flex items-center justify-between mx-auto ">
-        <div class="text-2xl font-bold">Bandage</div>
-        <button type="button" class="md:hidden block text-gray-400 hover:text-white focus:outline-none" id="mobile-menu-button" onclick="toggleMenu()">
+         <a href="#"><div class="text-2xl font-bold">Bandage</div></a>
+        <button type="button" class="md:hidden block text-gray-400 hover:animate-pulse focus:outline-none" id="mobile-menu-button" onclick="toggleMenu()">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
@@ -64,26 +64,32 @@
       </button>
       <!-- Меню -->
       <menu class="hidden md:flex items-center justify-between gap-[15px]">
-          <li class="text-md font-bold text-link leading-6">Home</li>
-          <li class="text-md font-bold text-link leading-6">
+          <a href="#"><li class="text-md font-bold text-link leading-6 hover:underline ">Home</li></a>
+          <a href="#"><li class="text-md font-bold text-link leading-6">
               <div>
-                  <button type="button" class="inline-flex w-full justify-center gap-x-1.5 bg-white py-2 text-sm font-semibold text-gray-900 ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                  <button type="button" class="inline-flex w-full justify-center gap-x-1.5 bg-white py-2 text-sm font-semibold text-gray-900 ring-gray-300" id="menu-button" aria-expanded="true" aria-haspopup="true">
                       Shop
                       <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                           <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                       </svg>
                   </button>
               </div>
-          </li>
-          <li class="text-sm font-bold text-link leading-6">About</li>
-          <li class="text-sm font-bold text-link leading-6">Blog</li>
-          <li class="text-sm font-bold text-link leading-6">Contacts</li>
-          <li class="text-sm font-bold text-link leading-6">Pages</li>
+          </li></a>
+          <a href="#"><li class="text-sm font-bold text-link leading-6 hover:underline">About</li></a>
+            <a href="#"><li class="text-sm font-bold text-link leading-6 hover:underline">Blog</li></a>
+              <a href="#"><li class="text-sm font-bold text-link leading-6 hover:underline">Contacts</li></a>
+                <a href="#"><li class="text-sm font-bold text-link leading-6 hover:underline">Pages</li></a>
       </menu>
 <div class="hidden md:block">
         <div class="flex items-center justify-around ">
-          <div class="text-blueLink text-sm font-bold leading-6 px-[15px] ">
-            Login / Register
+          <div class="text-blueLink text-sm font-bold leading-6 px-[6px] hover:underline ">
+            <a href="#"> Login </a>
+          </div>
+          <div class="text-blueLink text-sm font-bold leading-6  ">
+            / 
+          </div>
+          <div class="text-blueLink text-sm font-bold leading-6  px-[6px] hover:underline">
+            <a href="#">Register</a>
           </div>
           <div class="flex text-blueLink">
             <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs ">
@@ -114,17 +120,25 @@
                 </div>
                   
                     <menu class=" flex items-center flex-col justify-center gap-[15px]">
-                      <li class="text-md font-bold text-gray-700 leading-6 ">Home</li>
-                      <li class="text-md font-bold text-link leading-6"> Shop</li>
-                      <li class="text-sm font-bold text-link leading-6">About</li>
-                      <li class="text-sm font-bold text-link leading-6">Blog</li>
-                      <li class="text-sm font-bold text-link leading-6">Contacts</li>
-                      <li class="text-sm font-bold text-link leading-6">Pages</li>
+                      <a href=""><li class="text-md font-bold text-gray-700 leading-6 hover:underline">Home</li></a>
+                      <a href=""><li class="text-md font-bold text-link leading-6 hover:underline"> Shop</li></a>
+                      <a href=""><li class="text-sm font-bold text-link leading-6 hover:underline">About</li></a>
+                      <a href=""><li class="text-sm font-bold text-link leading-6 hover:underline">Blog</li></a>
+                      <a href=""><li class="text-sm font-bold text-link leading-6 hover:underline">Contacts</li></a>
+                      <a href=""><li class="text-sm font-bold text-link leading-6 hover:underline">Pages</li></a>
                   </menu>
                   <div class="flex items-center justify-center flex-col py-6">
-                    <div class="text-blueLink text-sm font-bold leading-6 px-[15px] ">
-                      Login / Register
+                    <div class="flex items-center justify-center flex-row">
+                    <div class="text-blueLink text-sm font-bold leading-6 px-[6px] hover:underline ">
+                      <a href="#"> Login </a>
                     </div>
+                    <div class="text-blueLink text-sm font-bold leading-6  ">
+                      / 
+                    </div>
+                    <div class="text-blueLink text-sm font-bold leading-6  px-[6px] hover:underline">
+                      <a href="#">Register</a>
+                    </div>
+                  </div>
                     <div class="flex text-blueLink flex-col">
                       <button class="min-w-[46px] h-[46px] flex items-center justify-center text-xs ">
                         <span class="w-4 h-4 flex items-center justify-center text-xs">
@@ -200,7 +214,7 @@
     </section>
 
     <section class="container mx-auto  md:grid md:grid-cols-5   md:gap-[14px] grid grid-cols-1">
-      <div class="flex relative">
+      <div class="flex relative transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-90 duration-300">
         <div class="flex flex-col items-center justify-center gap-[10px] text-white text-sm absolute inset-0">
           <h4 class="uppercase font-bold leading-6">Cloths</h4>
           <span class=""> 5 Items</span>
@@ -208,7 +222,7 @@
         <img class="object-cover h-[223px] w-full max-w-[205px] mx-auto" src="./img/card-cover-5.jpg" alt="Cover">
       </div>
 
-      <div class="flex relative">
+      <div class="flex relative transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-90 duration-300">
         <div class="flex flex-col items-center justify-center gap-[10px] text-white text-sm absolute inset-0">
           <h4 class="uppercase font-bold leading-6">Cloths</h4>
           <span class=""> 5 Items</span>
@@ -216,7 +230,7 @@
         <img class="object-cover h-[223px] w-full max-w-[205px] mx-auto" src="./img/card-cover-6.jpg" alt="Cover">
       </div>
 
-      <div class="flex relative">
+      <div class="flex relative transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-90 duration-300">
         <div class="flex flex-col items-center justify-center gap-[10px] text-white text-sm absolute inset-0">
           <h4 class="uppercase font-bold leading-6">Cloths</h4>
           <span class=""> 5 Items</span>
@@ -224,7 +238,7 @@
         <img class="object-cover h-[223px] w-full max-w-[205px] mx-auto" src="./img/card-cover-7.jpg" alt="Cover">
       </div>
 
-      <div class="flex relative">
+      <div class="flex relative transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-90 duration-300">
         <div class="flex flex-col items-center justify-center gap-[10px] text-white text-sm absolute inset-0">
           <h4 class="uppercase font-bold leading-6">Cloths</h4>
           <span class=""> 5 Items</span>
@@ -232,7 +246,7 @@
         <img class="object-cover h-[223px] w-full max-w-[205px] mx-auto" src="./img/card-cover-8.jpg" alt="Cover">
       </div>
 
-      <div class="flex relative">
+      <div class="flex relative transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-90 duration-300">
         <div class="flex flex-col items-center justify-center gap-[10px] text-white text-sm absolute inset-0">
           <h4 class="uppercase font-bold leading-6">Cloths</h4>
           <span class=""> 5 Items</span>
@@ -256,7 +270,7 @@
         </div>
         <div>
           <span>
-            <button class="h-[46px] w-[46px] ring-1 ring-inset ring-gray-300 rounded flex items-center justify-center">
+            <button class="h-[46px] w-[46px] ring-1 ring-inset ring-gray-300 rounded flex items-center justify-center ">
              <img src="./img/icon (1).png" alt="">
             </button>
           </span>
@@ -264,7 +278,7 @@
       </div>
       <div class="flex 2xl:mr-[34px] ">
         <div>
-          <button type="button" class="inline-flex justify-center items-center gap-x-1.5 rounded-md bg-bgbuton px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" style="width: 141px; height: 46px;">
+          <button type="button" class="inline-flex justify-center items-center gap-x-1.5 rounded-md bg-bgbuton px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:drop-shadow-lg" style="width: 141px; height: 46px;">
             Popularity
             <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -272,7 +286,7 @@
         </button>
         </div>
         <div>
-          <button class="mx-[15px] h-[46px] w-[90px] border-solid border-2 text-white rounded bg-blueLink">
+          <button class="mx-[15px] h-[46px] w-[90px] border-solid border-2 text-white rounded bg-blueLink transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             Filter
           </button>
         </div>
@@ -281,154 +295,169 @@
     
     <section class="container mx-auto md:grid md:grid-cols-4 grid grid-cols-1 " >
       
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
         <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
         </div>
-      </div>
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
-        <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
-        </div>
-      </div>
-      <div class="flex flex-col items-center justify-center gap-[10px] my-3">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
-        <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
-        </div>
-      </div>
-      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
-        <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
-        </div>
-      </div>
-      
-      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
-        <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
-        </div>
-      </div> 
-      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
-        <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
-        </div>
-      </div>
-      <div class="md:flex flex-col items-center justify-center gap-[10px] my-3 hidden ">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
-        <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
         </div>
       </div>
       <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
-        <img src="./img/product-cover-5.png" alt="">
-        <h5 class="text-tx font-bold" >Graphic Design</h5>
-        <p class="text-gray-500">English Department</p>
-        <div>
-          <span class="text-gray-400">$16.48</span>
-          <span class="text-green-700">$6.48</span>
-        </div>
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
         <div class="flex items-center justify-center gap-[3px] ">
-        <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
-        <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+        </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
+        <div class="flex items-center justify-center gap-[3px] ">
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+        </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
+        <div class="flex items-center justify-center gap-[3px] ">
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+        </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
+        <div class="flex items-center justify-center gap-[3px] ">
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+        </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
+        <div class="flex items-center justify-center gap-[3px] ">
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+        </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
+        <div class="flex items-center justify-center gap-[3px] ">
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+        </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-[10px] my-3  ">
+        <div class=" flex flex-col gap-[10px]  items-center  justify-center hover:border hover:border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+          <img src="./img/product-cover-5.png" alt="">
+          <h5 class="text-tx font-bold" >Graphic Design</h5>
+          <p class="text-gray-500">English Department</p>
+          <div>
+            <span class="text-gray-400">$16.48</span>
+            <span class="text-green-700">$6.48</span>
+          </div>
+        <div class="flex items-center justify-center gap-[3px] ">
+          <span class="h-[16px] w-[16px] bg-blueLink rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-bandage rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-cardscolor rounded-full"></span>
+          <span class="h-[16px] w-[16px] bg-green-900 rounded-full"></span>
+        </div>
         </div>
       </div>
     
-     
     </section>
 
     <div class="flex items-center justify-center my-[40px]">
       <span>
-        <button class="w-[83px] h-[74px] border-gray-300  border-2 rounded-l bg-bgbuton text-gray-400 font-bold drop-shadow-md">
+        <button class="w-[83px] h-[74px] border-gray-300  border-2 rounded-l bg-bgbuton text-gray-300 font-bold hover:bg-white">
           First
         </button>
       </span>
       <span>
-        <button class="w-[49px] h-[74px] border-gray-300  border-2 text-blueLink font-bold drop-shadow-md">
+        <button class="w-[49px] h-[74px] border-gray-300  border-2 text-blueLink font-bold hover:bg-bgbuton ">
           1
         </button>
       </span>
       <span>
-        <button class="w-[49px] h-[74px] border-gray-300  border-2 text-blueLink font-bold drop-shadow-md">
+        <button class="w-[49px] h-[74px] border-gray-300  border-2 text-blueLink font-bold hover:bg-bgbuton ">
           2
         </button>
       </span>
       <span>
-        <button class="w-[49px] h-[74px] border-gray-300  border-2 text-blueLink font-bold drop-shadow-md">
+        <button class="w-[49px] h-[74px] border-gray-300  border-2 text-blueLink font-bold hover:bg-bgbuton">
           3
         </button>
       </span>
       <span>
-        <button class="w-[83px] h-[74px] border-gray-300 border-2 rounded-l bg-bgbuton text-blueLink font-bold drop-shadow-md">
+        <button class="w-[83px] h-[74px] border-gray-300 border-2 rounded-r bg-bgbuton text-blueLink font-bold hover:bg-white">
           Next
         </button>
       </span>
@@ -501,8 +530,8 @@
     <h5 class="font-bold my-3">Get In Touch</h5>
     <div class=" mx-auto">
     <form class="flex items-center   py-2">
-      <input type="email" class="w-[204px] h-[58px] px-3 py-2   focus:outline-none focus:border-blue-700" placeholder="Enter your email">
-      <button type="submit" class="bg-blue-500 w-[117x] h-[58px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+      <input type="email" class="w-[204px] h-[58px] px-3 py-2   focus:outline-none focus:border-blue-500" placeholder="Enter your email">
+      <button type="submit" class="bg-blue-500 w-[117x] h-[58px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r focus:outline-none focus:shadow-outline">Submit</button>
     </form>
     </div>
     <p class="text-tx">Lore imp sum dolor Amit</p>
